@@ -12,14 +12,15 @@ import (
 type ()
 
 var cli struct {
-	Migrate cmd.Migrate `cmd:"" help:"Migrate topic definitions from a source cluster to a target cluster"`
+	Migrate  cmd.Migrate  `cmd:"" help:"Migrate topic definitions from a source cluster to a target cluster"`
+	Recreate cmd.Recreate `cmd:"" help:"Recreate topic definitions a source cluster"`
 }
 
 func main() {
 	sourceAPIKey := os.Getenv("SOURCE_API_KEY")
 	targetAPIKey := os.Getenv("TARGET_API_KEY")
-	if sourceAPIKey == "" || targetAPIKey == "" {
-		fmt.Println("The SOURCE_API_KEY and TARGET_API_KEY environment variables must be set")
+	if sourceAPIKey == "" {
+		fmt.Println("The SOURCE_API_KEY environment variable must be set")
 		os.Exit(1)
 	}
 
