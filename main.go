@@ -12,8 +12,9 @@ import (
 type ()
 
 var cli struct {
-	Migrate  cmd.Migrate  `cmd:"" help:"Migrate topic definitions from a source cluster to a target cluster"`
-	Recreate cmd.Recreate `cmd:"" help:"Recreate topic definitions a source cluster"`
+	Migrate              cmd.Migrate              `cmd:"" help:"Migrate topic definitions from a source cluster to a target cluster"`
+	Recreate             cmd.Recreate             `cmd:"" help:"Recreate topic definitions in a source cluster"`
+	DeleteConsumerGroups cmd.DeleteConsumerGroups `cmd:"" help:"Delete consumer groups in a source cluster"`
 }
 
 func main() {

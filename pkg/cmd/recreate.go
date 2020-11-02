@@ -30,7 +30,7 @@ func (g *Recreate) Run(globals *Globals) error {
 	}
 
 	// Delete topics on target cluster
-	for name, _ := range topics {
+	for name := range topics {
 		if !g.DryRun {
 			if name == "__consumer_offsets" {
 				continue
